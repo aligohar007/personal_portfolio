@@ -1,1 +1,28 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth background & color transitions and light/dark defaults */
+html {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	@apply bg-white text-slate-800;
+	transition: background-color 200ms ease, color 200ms ease;
+}
+
+.dark body {
+	@apply bg-slate-900 text-slate-100;
+}
+
+/* Improve focus outlines for accessibility */
+:focus {
+	outline: none;
+}
+
+/* small helper for dropdown transform origin */
+.dropdown-origin-top {
+	transform-origin: top center;
+}
